@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><i class="material-icons">store</i> Tienda Online</h1>
+        <div class="cart-header">
+            <span id="cart-count">0</span>
+            <i class="material-icons">shopping_cart</i>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="products-section">
+            <h2><i class="material-icons">shopping_basket</i> Productos</h2>
+            <div class="filters">
+                <input type="text" id="search" placeholder="Buscar productos...">
+                <select id="sort">
+                    <option value="name">Ordenar por nombre</option>
+                    <option value="price-asc">Precio: Menor a Mayor</option>
+                    <option value="price-desc">Precio: Mayor a Menor</option>
+                </select>
+            </div>
+            <ul id="lista-productos"></ul>
+        </section>
+
+        <section class="cart-section">
+            <h2><i class="material-icons">shopping_cart</i> Carrito</h2>
+            <ul id="lista-carrito"></ul>
+            <div class="cart-footer">
+                <p class="subtotal">Subtotal: $<span id="subtotal">0</span></p>
+                <p class="tax">IVA (16%): $<span id="tax">0</span></p>
+                <p class="total">Total: $<span id="total">0</span></p>
+                <div class="cart-actions">
+                    <button class="clear-btn" onclick="vaciarCarrito()">Vaciar Carrito</button>
+                    <button class="checkout-btn" onclick="procesarCompra()">Finalizar Compra</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <h2><i class="material-icons">history</i> Historial de Compras</h2>
+            <ul id="lista-historial"></ul>
+            <button class="clear-history-btn" onclick="borrarHistorial()">Borrar Historial</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
